@@ -22,7 +22,7 @@ A rota Transactions, quando no método POST, cria uma nova transação.
 
 A não ser que esteja sendo usado um outro prefixo, todas as rotas devem ser utilizadas como prefixo http://127.0.0.1:8000/
 
-Exemplo, na rota User, será http://127.0.0.1:8000/
+Exemplo, a rota User, será http://127.0.0.1:8000/api/accounts
 
 
 ## Rotas e requisições
