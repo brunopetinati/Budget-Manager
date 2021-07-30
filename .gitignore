@@ -1,0 +1,16 @@
+# Python
+*.pyc
+__pycache__
+
+# Poetry
+poetry.lock
+
+# Database
+*.sqlite3
+db
+
+# Editors
+.vscode
+
+.env
+
