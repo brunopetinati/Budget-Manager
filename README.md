@@ -39,11 +39,11 @@ Cria conta de usuário.
 Exemplo de requisição:
 
 {
-  "username": "brunopetinati6",
-  "first_name":"Bruno", 
-  "last_name":"Petinati", 
-  "full_name":"Bruno Petinati",
-  "email":"brunopetinati6@ig.com.br",
+  "username": "nome de usuário",
+  "first_name":"Nome", 
+  "last_name":"Sobrenome", 
+  "full_name":"Nome Sobrenome",
+  "email":"nomesobrenome@email.com",
   "date_of_birth":"1989-09-16",
   "CPF":"55555555555",
   "wallet": 50,
@@ -61,7 +61,7 @@ Loga na conta. Obtém token de identificação.
 Exemplo de requisição:
 
 {
-   "email":"brunopetinati6@ig.com.br",
+   "email":"nomesobrenome@email.com",
    "password":"1234"
 }
 
@@ -90,7 +90,7 @@ Exemplo de requisição:
 
 {
    "description":"Ração para gatos",
-   "transaction_type":"credit",
+   "transaction_type":"debt",
    "amount": "175.00"
 }
 
