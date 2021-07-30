@@ -4,7 +4,7 @@
 
 ## Instalação
 
-no terminal, na raíz do projeto, digitar o seguinte comando:
+No terminal, na raíz do projeto, digitar o seguinte comando:
 docker-compose up
 Em seguida usar aplicativos para requisição como Postman ou Insomnia para utilizar as rotas.
 
