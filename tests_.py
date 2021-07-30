@@ -73,13 +73,19 @@ class TestInfrastructureView(TestCase):
 	    "password":"1234"
         }
 
-        self.transaction_data = {
+        self.transaction_data_credit = {
         "description":"Teste",
         "transaction_type":"credit",
         "amount": "20.00"
     }
 
-    def test_admin_create_transaction(self):
+        self.transaction_data_debt = {
+        "description":"Teste",
+        "transaction_type":"debt",
+        "amount": "10.00"
+    }
+
+    def test_admin_create_transaction_credit(self):
         client = APIClient()
 
         user = client.post("/api/accounts/", self.create_user, format="json").json()
@@ -90,10 +96,29 @@ class TestInfrastructureView(TestCase):
 
         client.credentials(HTTP_AUTHORIZATION="Token " + token)
 
-        transaction = client.post("/api/transactions/", self.transaction_data, format="json").json()
+        transaction_credit = client.post("/api/transactions/", self.transaction_data_credit, format="json").json()
 
-        self.assertEqual(transaction["id"], 1)
-        self.assertEqual(transaction["transaction_type"], "credit")
-        self.assertEqual(transaction["amount"], '20.00')
+
+        self.assertEqual(transaction_credit["id"], 1)
+        self.assertEqual(transaction_credit["transaction_type"], "credit")
+        self.assertEqual(transaction_credit["amount"], '20.00')
+
+    def test_admin_create_transaction_debt(self):
+
+        client = APIClient()
+
+        user = client.post("/api/accounts/", self.create_user, format="json").json()
+
+        token = client.post("/api/login/", self.user_login, format="json").json()[
+            "token"
+        ]
+
+        client.credentials(HTTP_AUTHORIZATION="Token " + token)
+
+        transaction_debt = client.post("/api/transactions/", self.transaction_data_debt, format="json").json()
+
+        self.assertEqual(transaction_debt["id"], 1)
+        self.assertEqual(transaction_debt["transaction_type"], "debt")
+        self.assertEqual(transaction_debt["amount"], '10.00')
 
 
